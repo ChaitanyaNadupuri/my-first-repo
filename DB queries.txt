@@ -1,0 +1,13 @@
+
+SELECT * FROM INTB_APP.PO_DSHBRD_PO_DETAIL where po_id='32721040'
+select * from INTB_APP.PO_DSHBRD_PO_DETAIL where po_id=(select ID FROM INTB_APP.PO_DSHBRD_PURCHASE_ORDER where order_no= 50282 and status = 'A')
+
+select* from test_log where int_cat='system-intrepid-inbound-purchase-order-api' order by desc;
+
+select * from INTB_APP.po_dshbrd_po_details_history where po_id='534406'
+select * FROM INTB_APP.PO_DSHBRD_PO_HISTORY where order_no='50282' and CURRENT_STATUS_CODE=35  FETCH FIRST 1 ROWS ONLY
+
+Select * from test_log where json_data like '%1002770%'  and int_cat ='system-intrepid-inbound-purchase-order-api' order by create_ts desc limit 1;
+Select * from test_log where json_data like '%1002770%'  and int_cat ='system-intrepid-outbound-purchase-order-api' order by create_ts desc limit 1;
+
+Select * from asndb.to_orchestration where legacy_order_number='2326'
